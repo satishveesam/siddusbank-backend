@@ -100,18 +100,15 @@ https://siddusbank-backend-production.up.railway.app/api
 
 ## 🚀 Quick Test
 
-Register a User
-
 ### Test Backend Connection
-```bash
 curl https://siddusbank-backend-production.up.railway.app/api/auth/test
 
+Register a User
 curl -X POST https://siddusbank-backend-production.up.railway.app/api/auth/register \
   -H "Content-Type: application/json" \
   -d '{"username":"testuser","email":"test@example.com","password":"password123","fullName":"Test User"}'
 
 Login
-
 curl -X POST https://siddusbank-backend-production.up.railway.app/api/auth/login \
   -H "Content-Type: application/json" \
   -d '{"username":"testuser","password":"password123"}'
