@@ -103,3 +103,7 @@ https://siddusbank-backend-production.up.railway.app/api
 ### Test Backend Connection
 ```bash
 curl https://siddusbank-backend-production.up.railway.app/api/auth/test
+
+curl -X POST https://siddusbank-backend-production.up.railway.app/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{"username":"testuser","email":"test@example.com","password":"password123","fullName":"Test User"}'
