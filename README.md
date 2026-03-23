@@ -76,7 +76,7 @@ Maven	3.8+	Build automation
 Railway	-	Cloud deployment platform
 📚 API Documentation
 Base URL
-text
+
 https://siddusbank-backend-production.up.railway.app/api
 Authentication Endpoints
 Method	Endpoint	Description	Auth Required
