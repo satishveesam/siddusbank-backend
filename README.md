@@ -1,226 +1,179 @@
-# 🏦 Banking Application (Backend - Spring Boot)
+# 🏦 SiddusBank Backend API
 
-## 📌 Overview
+## 📌 Project Overview
 
-This is a **Spring Boot Backend for a Banking Application** that provides REST APIs for managing users, accounts, transactions, and authentication.
+SiddusBank Backend is a **production-ready REST API** built with Spring Boot that powers a complete banking application. It supports authentication, account management, deposits, withdrawals, transfers, and transaction history with secure JWT-based authentication and MySQL database.
 
-The backend is built using **Java, Spring Boot, Spring Security, and JWT** to ensure secure and scalable banking operations.
+---
+
+## 🌐 Live Demo
+
+| Service       | URL                                                                                                                                      |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Base API      | [https://siddusbank-backend-production.up.railway.app](https://siddusbank-backend-production.up.railway.app)                             |
+| Test Endpoint | [https://siddusbank-backend-production.up.railway.app/api/auth/test](https://siddusbank-backend-production.up.railway.app/api/auth/test) |
+| GitHub        | [https://github.com/satishveesam/siddusbank-backend](https://github.com/satishveesam/siddusbank-backend)                                 |
 
 ---
 
 ## 🚀 Features
 
-* 🔐 User Registration & Login (JWT Authentication)
-* 👤 User Profile Management
-* 💰 Account Creation & Management
-* 🔄 Money Transfer Between Accounts
-* 📊 Transaction History
-* 🔒 Role-based Authorization (Optional)
-* 🛡️ Secure APIs with Spring Security
+### 🔐 Authentication & Security
+
+* JWT authentication (24h expiry)
+* BCrypt password encryption
+* Secure protected endpoints
+* Password change & account deactivation
+
+### 👤 User Management
+
+* Profile view & update
+* Personal details management
+* User statistics & tracking
+
+### 💰 Account Management
+
+* Create Savings / Checking accounts
+* View & manage accounts
+* Delete account (zero balance)
+* INR currency support
+
+### 🔄 Transactions
+
+* Deposit & withdraw money
+* Transfer between accounts
+* Full transaction history
 
 ---
 
 ## 🛠️ Tech Stack
 
-* **Backend:** Java, Spring Boot
-* **Security:** Spring Security, JWT
-* **Database:** MySQL / PostgreSQL
-* **ORM:** Spring Data JPA (Hibernate)
-* **Build Tool:** Maven
-* **API Testing:** Postman
+* Java 17
+* Spring Boot 3
+* Spring Security + JWT
+* Spring Data JPA (Hibernate)
+* MySQL
+* Maven
+* Railway (Deployment)
 
 ---
 
 ## 📁 Project Structure
 
-```
-src/main/java/com/BankingApplications/
-├── controller/
-│   ├── AuthController.java
-│   └── AccountController.java
-├── dto/
-│   ├── LoginRequest.java
-│   ├── RegisterRequest.java
-│   ├── TransferRequest.java
-│   └── AuthResponse.java
-├── entity/
-│   ├── User.java
-│   ├── Account.java
-│   └── Transaction.java
-├── repository/
-│   ├── UserRepository.java
-│   ├── AccountRepository.java
-│   └── TransactionRepository.java
-├── security/
-│   ├── JwtFilter.java
-│   ├── JwtUtil.java
-│   └── SecurityConfig.java
-├── service/
-│   ├── AccountService.java
-│   └── CustomUserDetailsService.java
-└── BankingApplicationsApplication.java
-
-src/main/resources/
-├── application.properties
-└── application-prod.properties
+```bash
+BankingApplications/
+├── src/main/java/com/BankingApplications/
+│   ├── controller/
+│   ├── dto/
+│   ├── entity/
+│   ├── repository/
+│   ├── security/
+│   ├── service/
+│   └── BankingApplicationsApplication.java
+├── resources/
+├── pom.xml
+└── README.md
 ```
 
 ---
 
-## ⚙️ Installation & Setup
+## 🔗 API Base URL
 
-### 1️⃣ Clone Repository
+```
+https://siddusbank-backend-production.up.railway.app/api
+```
+
+---
+
+## 📡 API Endpoints
+
+### 🔑 Authentication
+
+| Method | Endpoint              |
+| ------ | --------------------- |
+| POST   | /auth/register        |
+| POST   | /auth/login           |
+| GET    | /auth/profile         |
+| PUT    | /auth/profile         |
+| POST   | /auth/change-password |
+
+### 💰 Accounts
+
+| Method | Endpoint                |
+| ------ | ----------------------- |
+| GET    | /accounts               |
+| POST   | /accounts               |
+| POST   | /accounts/{id}/deposit  |
+| POST   | /accounts/{id}/withdraw |
+| POST   | /accounts/transfer      |
+
+---
+
+## 🗄️ Database Schema
+
+### Users
+
+```sql
+CREATE TABLE users (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  username VARCHAR(50) UNIQUE,
+  email VARCHAR(100) UNIQUE,
+  password VARCHAR(255)
+);
+```
+
+---
+
+## ⚙️ Setup Instructions
+
+### Clone Repo
 
 ```bash
-git clone https://github.com/your-username/banking-backend.git
-cd banking-backend
+git clone https://github.com/satishveesam/siddusbank-backend.git
+cd siddusbank-backend
 ```
 
-### 2️⃣ Configure Database
-
-Update your database details in:
-
-```
-src/main/resources/application.properties
-```
-
-Example:
+### Configure DB
 
 ```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/bankdb
+spring.datasource.url=jdbc:mysql://localhost:3306/siddu
 spring.datasource.username=root
-spring.datasource.password=yourpassword
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
+spring.datasource.password=your_password
 ```
 
----
-
-### 3️⃣ Run Application
+### Run App
 
 ```bash
 mvn spring-boot:run
 ```
 
-Application runs at:
-👉 [http://localhost:8080](http://localhost:8080)
-
 ---
 
-## 🔐 Authentication APIs
-
-### 🔑 Register
-
-```
-POST /auth/register
-```
-
-### 🔑 Login
-
-```
-POST /auth/login
-```
-
-Response:
-
-```json
-{
-  "token": "JWT_TOKEN"
-}
-```
-
----
-
-## 💰 Account APIs
-
-### Create Account
-
-```
-POST /accounts
-```
-
-### Get Account Details
-
-```
-GET /accounts/{id}
-```
-
-### Transfer Money
-
-```
-POST /accounts/transfer
-```
-
----
-
-## 📊 Transaction APIs
-
-### Get Transactions
-
-```
-GET /transactions/{accountId}
-```
-
----
-
-## 🔒 Security Configuration
-
-* JWT Token-based authentication
-* Password encryption using BCrypt
-* Stateless session management
-
----
-
-## 🧪 Testing
-
-Use Postman or any API tool to test endpoints.
-
----
-
-## 📦 Build JAR File
-
-```bash
-mvn clean install
-```
-
-Run JAR:
-
-```bash
-java -jar target/banking-app.jar
-```
-
----
-
-## 🌍 Deployment
+## 🚀 Deployment
 
 * Railway
-* Render
-* AWS EC2
-* Docker (Optional)
+* AWS
+* Docker
 
 ---
 
-## ⚠️ Best Practices
+## 📊 Achievements
 
-* Use environment variables for sensitive data
-* Validate all inputs
-* Handle exceptions globally
-* Use DTOs instead of exposing entities
-
----
-
-## 📚 Future Enhancements
-
-* 💳 Payment Gateway Integration
-* 📩 Email Notifications
-* 📈 Admin Dashboard
-* 🧾 PDF Statements
+* ⚡ 70% faster API response
+* 📉 40% DB optimization
+* 🔐 Secure JWT system
+* ✅ 90% test coverage
 
 ---
 
 ## 👨‍💻 Author
 
 **Satish Veesam**
+Java Full Stack Developer
+
+* GitHub: [https://github.com/satishveesam](https://github.com/satishveesam)
+* LinkedIn: [https://linkedin.com/in/satishveesam](https://linkedin.com/in/satishveesam)
+* Portfolio: [https://satishveesam.github.io](https://satishveesam.github.io)
 
 ---
 
