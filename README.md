@@ -69,8 +69,6 @@ SiddusBank Backend is a comprehensive REST API built with **Spring Boot** that p
 ### Base URL
 https://siddusbank-backend-production.up.railway.app/api
 
-text
-
 ### Authentication Endpoints
 
 | Method | Endpoint | Description | Auth Required |
@@ -216,13 +214,11 @@ LinkedIn	https://linkedin.com/in/satishveesam
 Portfolio	https://satishveesam.github.io
 SiddusBank – Your trusted banking partner 🏦
 
-text
-
 ---
 
 ## 🔵 FRONTEND README (Copy This Entire Block)
 
-```markdown
+
 # SiddusBank Frontend
 
 ## 📋 Overview
@@ -305,7 +301,6 @@ SiddusBank Frontend is a modern, responsive banking application built with **Rea
 ### 1. Visit the Live App
 https://siddusbank-frontend.vercel.app
 
-text
 
 ### 2. Register a New User
 - Click "Register Now"
@@ -358,7 +353,7 @@ text
 ### Steps
 
 1. **Clone the repository**
-```bash
+
 git clone https://github.com/satishveesam/siddusbank-frontend.git
 cd siddusbank-frontend
 Install dependencies
@@ -417,7 +412,7 @@ LinkedIn	https://linkedin.com/in/satishveesam
 Portfolio	https://satishveesam.github.io
 SiddusBank – Your trusted banking partner 🏦
 
-text
+
 
 ---
 
