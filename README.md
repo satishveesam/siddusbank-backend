@@ -60,6 +60,47 @@ SiddusBank Backend is a **production-ready REST API** built with Spring Boot tha
 
 ## 📁 Project Structure
 
+````bash
+BankingApplications/
+├── src/
+│   └── main/
+│       ├── java/
+│       │   └── com/
+│       │       └── BankingApplications/
+│       │           ├── BankingApplicationsApplication.java
+│       │           ├── controller/
+│       │           │   ├── AccountController.java
+│       │           │   └── AuthController.java
+│       │           ├── dto/
+│       │           │   ├── AccountDto.java
+│       │           │   ├── AuthResponse.java
+│       │           │   ├── ChangePasswordRequest.java
+│       │           │   ├── LoginRequest.java
+│       │           │   ├── RegisterRequest.java
+│       │           │   ├── TransferRequest.java
+│       │           │   └── UpdateProfileRequest.java
+│       │           ├── entity/
+│       │           │   ├── Account.java
+│       │           │   ├── Transaction.java
+│       │           │   └── User.java
+│       │           ├── repository/
+│       │           │   ├── AccountRepository.java
+│       │           │   ├── TransactionRepository.java
+│       │           │   └── UserRepository.java
+│       │           ├── security/
+│       │           │   ├── JwtFilter.java
+│       │           │   ├── JwtUtil.java
+│       │           │   └── SecurityConfig.java
+│       │           └── service/
+│       │               ├── AccountService.java
+│       │               └── CustomUserDetailsService.java
+│       └── resources/
+│           ├── application.properties
+│           └── application-prod.properties
+├── pom.xml
+├── Procfile
+├── railway.json
+└── README.md
 ```bash
 BankingApplications/
 ├── src/main/java/com/BankingApplications/
@@ -73,7 +114,7 @@ BankingApplications/
 ├── resources/
 ├── pom.xml
 └── README.md
-```
+````
 
 ---
 
