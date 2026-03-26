@@ -101,20 +101,6 @@ BankingApplications/
 ├── Procfile
 ├── railway.json
 └── README.md
-```bash
-BankingApplications/
-├── src/main/java/com/BankingApplications/
-│   ├── controller/
-│   ├── dto/
-│   ├── entity/
-│   ├── repository/
-│   ├── security/
-│   ├── service/
-│   └── BankingApplicationsApplication.java
-├── resources/
-├── pom.xml
-└── README.md
-````
 
 ---
 
