@@ -116,6 +116,7 @@ curl -X POST https://siddusbank-backend-production.up.railway.app/api/auth/login
   -d '{"username":"testuser","password":"password123"}'
   
 ### 🗄️ Database Schema
+
 ## Users Table
 
 CREATE TABLE users (
