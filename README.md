@@ -83,6 +83,7 @@ SiddusBank Backend is a secure, production-ready REST API that powers the Siddus
 ---
 
 ## 📁 Project Structure
+
 BankingApplications/
 ├── src/
 │ └── main/
