@@ -86,45 +86,44 @@ SiddusBank Backend is a secure, production-ready REST API that powers the Siddus
 
 BankingApplications/
 ├── src/
-│ └── main/
-│ ├── java/
-│ │ └── com/
-│ │ └── BankingApplications/
-│ │ ├── BankingApplicationsApplication.java
-│ │ ├── controller/
-│ │ │ ├── AccountController.java
-│ │ │ └── AuthController.java
-│ │ ├── dto/
-│ │ │ ├── AccountDto.java
-│ │ │ ├── AuthResponse.java
-│ │ │ ├── ChangePasswordRequest.java
-│ │ │ ├── LoginRequest.java
-│ │ │ ├── RegisterRequest.java
-│ │ │ ├── TransferRequest.java
-│ │ │ └── UpdateProfileRequest.java
-│ │ ├── entity/
-│ │ │ ├── Account.java
-│ │ │ ├── Transaction.java
-│ │ │ └── User.java
-│ │ ├── repository/
-│ │ │ ├── AccountRepository.java
-│ │ │ ├── TransactionRepository.java
-│ │ │ └── UserRepository.java
-│ │ ├── security/
-│ │ │ ├── JwtFilter.java
-│ │ │ ├── JwtUtil.java
-│ │ │ └── SecurityConfig.java
-│ │ └── service/
-│ │ ├── AccountService.java
-│ │ └── CustomUserDetailsService.java
-│ └── resources/
-│ ├── application.properties
-│ └── application-prod.properties
+│   └── main/
+│       ├── java/
+│       │   └── com/
+│       │       └── BankingApplications/
+│       │           ├── BankingApplicationsApplication.java
+│       │           ├── controller/
+│       │           │   ├── AccountController.java
+│       │           │   └── AuthController.java
+│       │           ├── dto/
+│       │           │   ├── AccountDto.java
+│       │           │   ├── AuthResponse.java
+│       │           │   ├── ChangePasswordRequest.java
+│       │           │   ├── LoginRequest.java
+│       │           │   ├── RegisterRequest.java
+│       │           │   ├── TransferRequest.java
+│       │           │   └── UpdateProfileRequest.java
+│       │           ├── entity/
+│       │           │   ├── Account.java
+│       │           │   ├── Transaction.java
+│       │           │   └── User.java
+│       │           ├── repository/
+│       │           │   ├── AccountRepository.java
+│       │           │   ├── TransactionRepository.java
+│       │           │   └── UserRepository.java
+│       │           ├── security/
+│       │           │   ├── JwtFilter.java
+│       │           │   ├── JwtUtil.java
+│       │           │   └── SecurityConfig.java
+│       │           └── service/
+│       │               ├── AccountService.java
+│       │               └── CustomUserDetailsService.java
+│       └── resources/
+│           ├── application.properties
+│           └── application-prod.properties
 ├── pom.xml
 ├── Procfile
 ├── railway.json
 └── README.md
-
 ---
 
 ## 📚 API Documentation
